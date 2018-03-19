@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -34,6 +35,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+ //       if (mMap == null) {
+//            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+//            if (mMap != null) {
+//                //İstanbul, Kız Kulesi olsun.
+//                LatLng istanbulKoordinat = new LatLng(41.021161,29.004065);
+//                mMap.addMarker(new MarkerOptions().position(istanbulKoordinat).title("Kız Kulesi"));
+//                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(istanbulKoordinat, 13));
+//            }
+//        }
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -52,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        final Button btn_MapType=(Button) findViewById(R.id.btn_Sat);
+        final Button btn_MapType=(Button) findViewById(R.id.btn_Uydu);
         btn_MapType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,6 +133,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
-}
+
+
+
+    }
+
 
 

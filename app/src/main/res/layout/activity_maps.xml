@@ -1,117 +1,140 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:map="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:weightSum="1">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="0.9">
 
-         <fragment
-              android:id="@+id/map"
-              class="com.google.android.gms.maps.SupportMapFragment"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_alignParentLeft="true"
-              android:layout_alignParentStart="true"
-              android:layout_alignParentTop="true"
-              android:layout_weight="1"
-              tools:context="com.example.hasibezafer.googlemapsapp.MapsActivity" />-->
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            tools:context="com.example.hasibezafer.googlemapsapp.MapsActivity" />-->
 
-      <LinearLayout
-          android:id="@+id/lineer"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/zoom"
-          android:background="#ffffff"
-          android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/lineer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/zoom"
+            android:background="#ffffff"
+            android:orientation="horizontal">
 
-          <EditText
-              android:id="@+id/et_location"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_weight="1" />
+            <Button
+                android:id="@+id/btn_Uydu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_weight="2"
+                android:background="@android:color/holo_orange_dark"
+                android:text="Uydu"
+                android:textColorLink="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
 
-          <Button
-              android:id="@+id/btn_Go"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Go" />
+            <Button
+                android:id="@+id/btn_Go"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_dark"
+                android:text="Git" />
 
-          <!--  <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-               xmlns:map="http://schemas.android.com/apk/res-auto"
-               xmlns:tools="http://schemas.android.com/tools"
-               android:id="@+id/kazatutanak"
+            <!--  <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:map="http://schemas.android.com/apk/res-auto"
+                 xmlns:tools="http://schemas.android.com/tools"
+                 android:id="@+id/kazatutanak"
 
-               class="com.google.android.gms.maps.SupportMapFragment"
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               tools:context="com.example.sam.mobilkazatutanak.MapsActivity" />-->
-     </LinearLayout>
-
-     <ZoomControls
-         android:id="@+id/zoom"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentTop="true"
-         android:layout_alignParentEnd="true"></ZoomControls>
-
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_alignParentBottom="true"
-         android:orientation="horizontal"
-         android:weightSum="0.9">
-         <LinearLayout
-             android:layout_width="0dp"
-             android:layout_height="wrap_content"
-             android:layout_weight="0.3"
-             android:gravity="center">
-
-             <Button
-                 android:id="@+id/btn_Sat"
-                 style="@style/Widget.AppCompat.Button.Colored"
-                 android:layout_width="wrap_content"
+                 class="com.google.android.gms.maps.SupportMapFragment"
+                 android:layout_width="match_parent"
                  android:layout_height="match_parent"
-                 android:layout_alignParentTop="true"
-                 android:layout_weight="0.3"
-                 android:text="Uydu"
-                 android:textColorLink="@color/colorPrimary" />
-         </LinearLayout>
+                 tools:context="com.example.sam.mobilkazatutanak.MapsActivity" />-->
+        </LinearLayout>
+
+        <ZoomControls
+            android:id="@+id/zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"></ZoomControls>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/background_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btn_Anasayfa"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:layout_marginRight="1dp"
+            android:textSize="@dimen/text_size_10"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Ana Sayfa" />
+
+        <Button
+            android:id="@+id/btn_Profil"
+            android:textSize="@dimen/text_size_10"
+            android:layout_width="0dp"
+            android:layout_marginRight="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Profil"
+            android:textColorLink="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_KazaYaptim"
+            android:textSize="@dimen/text_size_10"
+            android:layout_marginRight="1dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Kaza Yaptım" />
+
+        <Button
+            android:id="@+id/btn_Tutanaklarim"
+            android:textSize="@dimen/text_size_10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1dp"
+            android:layout_weight="0.2"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Tutanaklarim" />
+
+        <Button
+            android:id="@+id/btn_Yardim"
+            android:textSize="@dimen/text_size_10"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Yardım" />
+    </LinearLayout>
 
 
-     <LinearLayout
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_weight="0.3"
-         android:gravity="center">
-
-         <Button
-             android:id="@+id/btn_Home"
-             style="@style/Widget.AppCompat.Button.Colored"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:drawableTop="@mipmap/main_menu_guncel_icon"
-             android:text="Ana Sayfa" />
-     </LinearLayout>
-     <LinearLayout
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_weight="0.3"
-         android:gravity="center">
-
-         <Button
-             android:id="@+id/btn_Profile"
-             style="@style/Widget.AppCompat.Button.Colored"
-             android:layout_width="wrap_content"
-             android:layout_height="match_parent"
-             android:drawableTop="@mipmap/main_menu_profil_icon"
-             android:text="Profil"
-             android:textColorLink="@color/colorPrimary" />
-     </LinearLayout>
-     </LinearLayout>
-     </RelativeLayout>
-
- </RelativeLayout>
+</LinearLayout>
 
